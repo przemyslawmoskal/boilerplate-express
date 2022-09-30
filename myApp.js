@@ -41,8 +41,8 @@ app.get("/", function(req, res) {
 		// });
 	// }
 // });
-
-app.use((req, res, next) => {
+console.log("Hello world");
+app.use(function(req, res, next) => {
 	let result = req.method + " " + req.path + " " + " - " + req.ip;
 	console.log(result);
 	next();
