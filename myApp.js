@@ -18,19 +18,35 @@ app.get("/", function(req, res) {
 //	});
 // });
 
-app.get("/json", function(req, res) {
-	if(process.env.MESSAGE_STYLE === "uppercase") {
-		res.json({
-			"message": "HELLO JSON"
-		});
-	} else {
-		res.json({
-			"message": "Hello json"
-		});
-	}
+// app.get("/json", function(req, res) {
+	// if(process.env.MESSAGE_STYLE === "uppercase") {
+		// res.json({
+			// "message": "HELLO JSON"
+		// });
+	// } else {
+		// res.json({
+			// "message": "Hello json"
+		// });
+	// }
+// });
+
+// app.get("/json", function(req, res) {
+	// if(process.env.MESSAGE_STYLE === "uppercase") {
+		// res.json({
+			// "message": "HELLO JSON"
+		// });
+	// } else {
+		// res.json({
+			// "message": "Hello json"
+		// });
+	// }
+// });
+
+app.use((req, res, next) => {
+	let result = req.method + " " + req.path + " " + " - " + req.ip;
+	console.log(result);
+	next();
 });
-
-
 
 
 
