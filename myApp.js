@@ -42,7 +42,7 @@ app.get("/", function(req, res) {
 	// }
 // });
 console.log("Hello world");
-app.use(function(req, res, next) => {
+app.use(function(req, res, next) {
 	let result = req.method + " " + req.path + " " + " - " + req.ip;
 	console.log(result);
 	next();
