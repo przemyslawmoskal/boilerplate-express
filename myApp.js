@@ -3,14 +3,14 @@ require('dotenv').config();
 let express = require('express');
 let app = express();
 
-path = __dirname + "/public";
-app.use(express.static(path));
-app.use("/public", express.static(path));
+// path = __dirname + "/public";
+// app.use(express.static(path));
+// app.use("/public", express.static(path));
 
-absolutePath = __dirname + "/views/index.html";
-app.get("/", function(req, res) {
-	res.sendFile(absolutePath);
-});
+// absolutePath = __dirname + "/views/index.html";
+// app.get("/", function(req, res) {
+	// res.sendFile(absolutePath);
+// });
 
 // app.get("/json", function(req, res) {
 // 	res.json({
@@ -41,10 +41,9 @@ app.get("/", function(req, res) {
 		// });
 	// }
 // });
-console.log("Hello world");
+
 app.use(function(req, res, next) {
-	let result = "" + req.method + " " + req.path + " " + " - " + req.ip;
-	console.log(result);
+	console.log(req.method + " " + req.path + " - " + req.ip);
 	next();
 });
 
