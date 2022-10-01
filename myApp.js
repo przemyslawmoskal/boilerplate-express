@@ -55,26 +55,3 @@ app.get('/now', function(req, res, next) {
 		time: req.time
 	});
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- module.exports = app;
