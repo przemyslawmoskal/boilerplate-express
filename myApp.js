@@ -60,10 +60,18 @@ let app = express();
 	// }, delayInMilliseconds);
 // });
 
-app.get("/:word/echo", (req, res) => {
-	const {word} = req.params;
+// app.get("/:word/echo", (req, res) => {
+	// const {word} = req.params;
+	// res.json({
+		// echo: word
+	// });
+// });
+
+app.get("/name", (req, res) => {
+	var firstname = req.query.first;
+	var lastname = req.query.last;
 	res.json({
-		echo: word
+		name: `${firstname} ${lastname}`
 	});
 });
 
