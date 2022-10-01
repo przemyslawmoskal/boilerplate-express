@@ -77,7 +77,16 @@ let app = express();
 // });
 
 // Challenge 11: Use body-parser to Parse POST Requests:
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({extended: false}));
+// app.use(bodyParser.json());
+
+// Challenge 12: Get Data from POST Requests:
+app.post("/name", (req, res) => {
+	var firstname = req.body.first;
+	var lastname = req.body.last;
+	res.json({
+		name: `${firstname} ${lastname}`
+	});
+});
 
 module.exports = app;
