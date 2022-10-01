@@ -59,3 +59,5 @@ app.get('/now', function(req, res, next) {
 		})
 	}, delayInMilliseconds);
 });
+
+module.exports = app;
