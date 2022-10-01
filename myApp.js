@@ -47,17 +47,24 @@ let app = express();
 	// next();
 // });
 
-var delayInMilliseconds = 1000;
+// var delayInMilliseconds = 1000;
 
-app.get('/now', function(req, res, next) {
-	req.time = new Date().toString();
-	next();
-}, function(req, res) {
-	setTimeout(function() {
-		res.send({
-			time: req.time
-		})
-	}, delayInMilliseconds);
+// app.get('/now', function(req, res, next) {
+	// req.time = new Date().toString();
+	// next();
+// }, function(req, res) {
+	// setTimeout(function() {
+		// res.send({
+			// time: req.time
+		// })
+	// }, delayInMilliseconds);
+// });
+
+app.get("/:word/echo", (req, res) => {
+	const {word} = req.params;
+	res.json({
+		echo: word
+	});
 });
 
-module.exports = app;
+// module.exports = app;
