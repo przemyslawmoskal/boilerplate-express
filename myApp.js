@@ -1,4 +1,5 @@
 require('dotenv').config();
+var bodyParser = require('body-parser');
 
 let express = require('express');
 let app = express();
@@ -67,12 +68,16 @@ let app = express();
 	// });
 // });
 
-app.get("/name", (req, res) => {
-	var firstname = req.query.first;
-	var lastname = req.query.last;
-	res.json({
-		name: `${firstname} ${lastname}`
-	});
-});
+// app.get("/name", (req, res) => {
+	// var firstname = req.query.first;
+	// var lastname = req.query.last;
+	// res.json({
+		// name: `${firstname} ${lastname}`
+	// });
+// });
+
+// Challenge 11: Use body-parser to Parse POST Requests:
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 module.exports = app;
